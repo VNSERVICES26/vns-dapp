@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNST Token Swap</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VNST Token Swap</h1>
+            <button id="connectWalletBtn" class="gold-btn">Connect Wallet</button>
+            <div id="walletInfo" class="hidden">
+                <p>Connected: <span id="walletAddress"></span></p>
+                <p>USDT Balance: <span id="usdtBalance">0</span></p>
+            </div>
+        </header>
+
+        <div class="swap-container">
+            <div class="info-panel">
+                <div class="info-item">
+                    <span>VNST Price:</span>
+                    <span id="vnstPrice">Loading...</span>
+                </div>
+                <div class="info-item">
+                    <span>Available VNST:</span>
+                    <span id="availableVNST">Loading...</span>
+                </div>
+                <div class="info-item">
+                    <span>Minimum Purchase:</span>
+                    <span id="minBuyAmount">Loading...</span>
+                </div>
+            </div>
+
+            <div class="swap-form">
+                <div class="input-group">
+                    <label for="vnstAmount">VNST Amount</label>
+                    <input type="number" id="vnstAmount" placeholder="Enter VNST amount">
+                    <div id="quoteResult" class="quote-result hidden">
+                        <p>You will pay: <span id="usdtAmount">0</span> USDT</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="approveBtn" class="gold-btn" disabled>Approve USDT</button>
+                    <button id="buyBtn" class="gold-btn" disabled>Buy VNST</button>
+                </div>
+
+                <div class="contract-info">
+                    <p>VNST Contract: <span id="vnstContract">Loading...</span></p>
+                    <button id="copyContractBtn" class="gold-btn small">Copy Address</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="statusMessages"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
